@@ -1,10 +1,10 @@
 #!/bin/bash
-export PATH="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/tools/metagen-master:$PATH"
-export PATH="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/tools/centrifuge-1.0.3-beta:$PATH"
-Index="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/cox1_index"
-Inputfqpath="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/testfq"
-Outputfiledir="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/results"
-Sample="R2011005908_0_20201222"
+export PATH="/PATH/TO/metagen-master:$PATH" #you can clone the repo from https://github.com/jsh58/metagen.git
+export PATH="/PATH/TO/centrifuge-1.0.3-beta:$PATH" #you can get a Linux version here ftp://ftp.ccb.jhu.edu/pub/infphilo/centrifuge/downloads/centrifuge-1.0.3-beta-Linux_x86_64.zip
+Index="/PATH/to/cox1_index" #you can get a presetted index here 
+Inputfqpath="/PATH/TO/FQ_FILES"
+Outputfiledir="/PATH/TO/OUTPUT/DIRECTORY"
+Sample="a_string" #lets give output a name
 
 echo -e "starting at $(date)"
 echo -e "working on sample $Sample"
