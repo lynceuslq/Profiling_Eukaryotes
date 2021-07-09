@@ -1,9 +1,17 @@
 #!/bin/bash
-export PATH="/hwfssz5/ST_INFECTION/GlobalDatabase/user/fengqikai/software/.conda/envs/Trinity-2.11.0/bin/:$PATH"
-export PATH="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/tools/centrifuge-1.0.3-beta:$PATH"
 
-echo -e "job starting at: $(date)"
+###################################################please define the arguements below###########################################################
+export PATH="/PATH/TO/PYTHON/:$PATH"
+export PATH="/PATH/TO/centrifuge-1.0.3-beta:$PATH"
+OUTDIR="/PATH/TO/INDEX"
+INDEX=""#give you index a name
+TAXDUMP="/PATH/TO/taxdump"#can be decompressed from taxdump.tar.gz, a taxonomy file from NCBI
+FASTA=""#a fasta file of CDS with GI accessions
+CONVERSION=""#a table of CDS GI accession and its taxid
 
-centrifuge-build -p 16 --conversion-table /hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/cox1_v4.conv  --taxonomy-tree /hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/nodes.dmp --name-table /hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/names.dmp /hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/input-sequences.fna  cox1_index
+##################################################you do not need to change anything below#######################################################
+echo -e "start to build index at: $(date)"
 
-echo -e "job completed at $(date)"
+centrifuge-build -p 16 --conversion-table  $CONVERSION --taxonomy-tree $TAXDUMP/nodes.dmp --name-table $TAXDUMP/names.dmp $FASTA $CONVERSION
+
+echo -e "job completed at $(date), index stored as $OUTDIR/$INDEX"
