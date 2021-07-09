@@ -1,9 +1,12 @@
 #!/bin/bash
 
-Input="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/results"
-Output="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump"
-sample="R2011005785_0_20201225"
+#################################################please define the arguements below######################################################
+Input="/PATH/TO/INPUT"
+Output="/PATH/TO/OUTPUT"
+sample=""#give a sample name
 
+
+#################################################you do not need to change anything here#################################################
 echo -e "start to generate summaries on sample $sample"
 awk '$4 == "D"'  ${Input// /}/${sample// /}.centrifuge.KSout | sort -n -r -k1,1 | head -1 > $Output/tmpfile
 awk '$4 == "K"'  ${Input// /}/${sample// /}.centrifuge.KSout | sort -n -r -k1,1 | head -1 >> $Output/tmpfile
