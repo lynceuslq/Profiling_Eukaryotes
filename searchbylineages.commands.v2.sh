@@ -1,7 +1,7 @@
 #!bin/bash
 
-#Inpath="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/results"
-#Outpath="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/sortbylineage_results"
+TAXNAMES="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/taxanames.txt"
+TAXREPORT="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/tax_report.txt"
 
 helpFunction()
 {
@@ -36,9 +36,9 @@ then
    helpFunction
 else
    echo -e "start to sort species from $taxon in file $sample, results presented at the level of $level\t$(date)"
-   taxid=$(cat /hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/taxanames.txt | awk -v m="${taxon}" '{FS="\t"; if($2 == m) {print}}' | cut -f1)
+   taxid=$(cat $TAXNAMES | awk -v m="${taxon}" '{FS="\t"; if($2 == m) {print}}' | cut -f1)
 
-   grep -w "${taxid// /}" /hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/tax_report.txt | cut -d "|" -f4 | sed "s/\t//" | tr " " "\n" | sort | uniq | tail -n +2 | while read tax; do awk -v t="$tax" '$5 == t' $Inpath/${sample// /} ; done |  awk -v p="$level" '$4 == p'  > $Outpath/tmpfile
+   grep -w "${taxid// /}" $TAXREPORT | cut -d "|" -f4 | sed "s/\t//" | tr " " "\n" | sort | uniq | tail -n +2 | while read tax; do awk -v t="$tax" '$5 == t' $Inpath/${sample// /} ; done |  awk -v p="$level" '$4 == p'  > $Outpath/tmpfile
    Sum=$(cut -f1 $Outpath/tmpfile | paste -sd+ - | bc)
    cat $Outpath/tmpfile | sed 's/^ *//g' | cut -f1,2,3,4,5,6,7 > $Outpath/c1 
    cat $Outpath/tmpfile | sed 's/^ *//g' | cut -f8 | sed 's/^ *//g' > $Outpath/c2 
