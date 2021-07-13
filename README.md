@@ -5,6 +5,7 @@ To identify potential eukaryotic components and their compositions in a meta-gen
 1. Propfile eukaryotic compositions with preformatted index 
 
 why to use preformatted index? 
+
 I built a centrifuge index consisted by COX1 genes downloaded from NCBI protein database (downloaded as CDS). COX1 is a home-keeping gene in all eukaryotic organisms so it should work well with most taxa to profile. COX1 is about 300 to 500 aa in length, which is much much less than the whole eukaryotic genomes or NT database (which has been preformatted by Centrifuge it self), and therefore it can work very efficiently (about 20 to 60 minutes per metagenomic sample). 
 
 how to use it?
