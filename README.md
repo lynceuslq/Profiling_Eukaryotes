@@ -6,7 +6,8 @@ Dependencies
 1. Centrifuge: 
 2. metagen (to add taxonomic information):
 
-1. Propfile eukaryotic compositions with preformatted index 
+
+Propfile eukaryotic compositions with preformatted index 
 
 why to use preformatted index? 
 
