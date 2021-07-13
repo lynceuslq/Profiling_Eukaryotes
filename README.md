@@ -3,11 +3,11 @@ To identify potential eukaryotic components and their compositions in a meta-gen
 
 
 Dependencies
-1. Centrifuge: 
-2. metagen (to add taxonomic information):
+1. Centrifuge: ftp://ftp.ccb.jhu.edu/pub/infphilo/centrifuge/downloads/centrifuge-1.0.3-beta-Linux_x86_64.zip
+2. metagen (to add taxonomic information): https://github.com/jsh58/metagen.git
 
 
-Propfile eukaryotic compositions with preformatted index 
+*********************************Propfile eukaryotic compositions with preformatted index***************************************
 
 why to use preformatted index? 
 
