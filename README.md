@@ -6,8 +6,8 @@ Dependencies
 1. Centrifuge: ftp://ftp.ccb.jhu.edu/pub/infphilo/centrifuge/downloads/centrifuge-1.0.3-beta-Linux_x86_64.zip
 2. metagen (to add taxonomic information): https://github.com/jsh58/metagen.git
 
-
-*********************************Propfile eukaryotic compositions with preformatted index***************************************
+\n
+*Propfile eukaryotic compositions with preformatted index
 
 why to use preformatted index? 
 
