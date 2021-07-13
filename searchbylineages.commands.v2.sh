@@ -1,7 +1,7 @@
 #!bin/bash
 
-TAXNAMES="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/taxanames.txt"
-TAXREPORT="/hwfssz5/ST_INFECTION/GlobalDatabase/user/liqian6/taxdump/tax_report.txt"
+TAXNAMES="/PATH/TO/taxanames.txt"
+TAXREPORT="/PATH/TO/tax_report.txt"
 
 helpFunction()
 {
